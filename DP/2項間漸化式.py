@@ -1,4 +1,3 @@
-# x, d, k = map(int, input().split())
 x,d,k = 0,7,9
 a = [x] * (k + 1)
 

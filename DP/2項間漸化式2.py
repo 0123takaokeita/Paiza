@@ -1,12 +1,21 @@
-# x, d = map(int, input().split())
-x,d = 0,7
-a = [x] * (1000 + 1)
-for i in range(2, 1000 + 1):
-    a[i] = a[i - 1] + d
+# map関数はイテレータを返すためリストに変換
+x,d,k = list(map(int,input().split()))
 
-# q = int(input())
-q = 9
-print(a)
-for i in range(q):
-    k = int(input())
-    print(a[k])
+# 内包表記もイテレータを返すためリストに変換
+# print(list(int(i) for i in input().split()))
+
+# 配列だとindexのエラーが出やすい
+init_array = []
+init_array.append(x)
+for i in range(1,k):
+    init_array.append(init_array[i-1] + d)
+
+print(init_array[k-1])
+
+# 連想配列
+init = {}
+init[0] = x
+for i in range(1,k):
+    init[i] = init[i-1] + d
+
+print(init[k-1])

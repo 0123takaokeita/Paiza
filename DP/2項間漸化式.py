@@ -1,7 +1,12 @@
-x,d,k = 0,7,9
-a = [x] * (k + 1)
+x,d = map(int,input().split())
+q = int(input())
 
-for i in range(2, k + 1):
-    a[i] = a[i - 1] + d
+# 範囲が1000まであるので値を準備する
+init = {}
+init[1] = x
+for i in range(2,1000+1):
+    init[i] = init[i-1] + d
 
-print(a[k])
+# 入力された数値に対応する値を出力
+for i in range(q):
+    print(init[int(input())])

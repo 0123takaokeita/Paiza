@@ -3,22 +3,15 @@
 # ちなみに、これはフィボナッチ数列と呼ばれる有名な数列です。
 # a_1 = 1 
 # a_2 = 1 
-# a_n= a_{n-2} + a_{n-1} (n ≧ 3)
+# a_n= a_{n-2} + a_{n-1} (n ≧ 3) 
 
-
-
-stock = {}
-stock[0] = 1
-stock[1] = 2
+cache = [1] * 41
 
 q = int(input())
+for i in range(3,41):
+    cache[i] = cache[i-1] + cache[i-2]
 
-for i in range(3,q-2):
-    print(i)
-
-
-
-
-
-
+for i in range(q):
+    index = int(input())
+    print(cache[index])
 
